@@ -4,6 +4,18 @@
   align-items: stretch;
   overflow: hidden;
   height: 100vh;
+  background-image: radial-gradient(
+    circle,
+    #fdbe42,
+    #feb460,
+    #ffa48f,
+    #fe94c0,
+    #fd88e0,
+    #072f5f,
+    #00264d,
+    #00172d,
+    #000b18
+  );
 }
 
 .astronautImg {
