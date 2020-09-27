@@ -6,6 +6,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   overflow: hidden;
+  -webkit-overflow-scrolling: auto;
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
 }
 
 a {
@@ -15,10 +19,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-.element::-webkit-scrollbar {
-  -webkit-appearance: none;
-  width: 0;
-  height: 0;
 }
