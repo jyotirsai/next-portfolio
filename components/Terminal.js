@@ -22,10 +22,12 @@ export default function Terminal() {
   return (
     <div className={classes.container}>
       <motion.div
+        initial={{ y: -25 }}
         animate={{
           opacity: ["0", "1"],
-          scale: [2, 1],
+          y: 0,
         }}
+        overflow={"hidden"}
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.75 }}
       >
