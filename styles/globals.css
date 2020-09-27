@@ -16,3 +16,9 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.element::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 0;
+  height: 0;
+}
