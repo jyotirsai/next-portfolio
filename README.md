@@ -2,5 +2,5 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## My Portfolio  
 
-This is my [portfolio website](https://.jyotirsai.com) made with Next.js. Still under construction.
+This is my [portfolio website](https://jyotirsai.com) made with Next.js. Still under construction.
 
