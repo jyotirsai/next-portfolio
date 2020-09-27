@@ -10,6 +10,7 @@ body {
   -webkit-appearance: none;
   width: 0;
   height: 0;
+  position: relative;
 }
 
 a {
