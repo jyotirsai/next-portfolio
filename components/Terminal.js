@@ -12,6 +12,7 @@ const useStyles = makeStyles({
   text: {
     color: "white",
     display: "inline-block",
+    textAlign: "center",
   },
 });
 
@@ -20,10 +21,8 @@ export default function Terminal() {
   return (
     <div className={classes.container}>
       <Typography display="block" variant="body1" className={classes.text}>
-        Hello! I'm Jyotir.
-      </Typography>
-      <Typography display="block" variant="body1" className={classes.text}>
-        A mechanical engineering student and self-taught programmer.
+        Hello! I'm Jyotir. <br /> A mechanical engineering student <br /> and
+        self-taught programmer.
       </Typography>
     </div>
   );
