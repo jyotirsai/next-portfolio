@@ -8,8 +8,9 @@ export default function Home() {
         <title>Create Next App</title>
       </Head>
       <div className={styles.container}>
-        <div className={styles.astronautImg}></div>
-        <h1>Hello</h1>
+        <div className={styles.astronautImg}>
+          <h1>Hello World</h1>
+        </div>
       </div>
     </div>
   );
