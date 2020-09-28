@@ -35,7 +35,7 @@ export default function Intro() {
         <Typography className={classes.text} variant="h3">
           Jyotir Sai
         </Typography>
-        <Typography display="block" variant="body1" className={classes.text}>
+        <Typography display="block" variant="body2" className={classes.text}>
           <Typed
             strings={["Engineering Student and Programmer"]}
             typeSpeed={40}
