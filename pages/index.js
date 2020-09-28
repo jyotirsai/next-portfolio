@@ -1,6 +1,6 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Terminal from "../components/Terminal";
+import Intro from "../components/Intro";
 import Particles from "../components/Particles";
 
 export default function Home() {
@@ -11,7 +11,7 @@ export default function Home() {
       </Head>
       <div className={styles.container}>
         <div className={styles.astronautImg}>
-          <Terminal />
+          <Intro />
         </div>
         <Particles />
       </div>

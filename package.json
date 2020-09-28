@@ -16,6 +16,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-particles-webgl": "^1.0.10",
+    "react-terminal-ui": "^0.1.9",
     "react-typed": "^1.2.0"
   }
 }
