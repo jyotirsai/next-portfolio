@@ -2,6 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Intro from "../components/Intro";
 import Particles from "../components/Particles";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (

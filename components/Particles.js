@@ -8,12 +8,12 @@ export default function Particles() {
     boundaryType: "passthru",
     antialias: false,
     direction: {
-      xMin: -0.4,
-      xMax: 0.4,
-      yMin: -1.0,
-      yMax: 1,
-      zMin: -1,
-      zMax: 1,
+      xMin: 0,
+      xMax: 1,
+      yMin: 0.5,
+      yMax: 0.6,
+      zMin: 0,
+      zMax: 0,
     },
     lines: {
       colorMode: "rainbow",

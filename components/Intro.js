@@ -1,20 +1,28 @@
-import { Typography } from "@material-ui/core";
+import { Toolbar, Link, List, ListItem } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import { motion } from "framer-motion";
 import Typed from "react-typed";
 
 const useStyles = makeStyles({
   container: {
-    display: "flex",
-    direction: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    height: "95vh",
+    position: "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
+    width: "100vw",
+    textAlign: "center",
+    zIndex: "1",
   },
   text: {
     color: "white",
     display: "block",
+  },
+  toolbar: {
+    display: "flex",
+    direction: "column",
+    justifyContent: "center",
     textAlign: "center",
+    height: "95vh",
   },
 });
 
@@ -22,26 +30,19 @@ export default function Intro() {
   const classes = useStyles();
   return (
     <div className={classes.container}>
-      <motion.div
-        initial={{ y: -25 }}
-        animate={{
-          opacity: ["0", "1"],
-          y: 0,
-        }}
-        overflow={"hidden"}
-        whileHover={{ scale: 1.1 }}
-        transition={{ duration: 0.75 }}
-      >
-        <Typography className={classes.text} variant="h3">
-          Jyotir Sai
-        </Typography>
-        <Typography display="block" variant="body2" className={classes.text}>
-          <Typed
-            strings={["Engineering Student and Programmer"]}
-            typeSpeed={40}
-          />
-        </Typography>
-      </motion.div>
+      <Toolbar className={classes.toolbar}>
+        <List>
+          <ListItem button>
+            <Link>About</Link>
+          </ListItem>
+          <ListItem button>
+            <Link>Blog</Link>
+          </ListItem>
+          <ListItem button>
+            <Link>Projects</Link>
+          </ListItem>
+        </List>
+      </Toolbar>
     </div>
   );
 }
