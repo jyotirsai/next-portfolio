@@ -1,4 +1,5 @@
-import { Toolbar, Link, List, ListItem } from "@material-ui/core";
+import Link from "next/link";
+import { Toolbar, List, ListItem } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import { motion } from "framer-motion";
 import Typed from "react-typed";
@@ -33,13 +34,19 @@ export default function Intro() {
       <Toolbar className={classes.toolbar}>
         <List>
           <ListItem button>
-            <Link>About</Link>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
           </ListItem>
           <ListItem button>
-            <Link>Blog</Link>
+            <Link href="/blog">
+              <a>Blog</a>
+            </Link>
           </ListItem>
           <ListItem button>
-            <Link>Projects</Link>
+            <Link href="/projects">
+              <a>Projects</a>
+            </Link>
           </ListItem>
         </List>
       </Toolbar>
