@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { Toolbar, List, ListItem } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
-import { motion } from "framer-motion";
-import Typed from "react-typed";
 
 const useStyles = makeStyles({
   container: {
@@ -45,7 +43,7 @@ export default function Intro() {
           </ListItem>
           <ListItem button>
             <Link href="/projects">
-              <a>Projects</a>
+              <a>Projects </a>
             </Link>
           </ListItem>
         </List>

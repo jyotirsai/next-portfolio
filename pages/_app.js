@@ -4,8 +4,12 @@ import Head from "next/head";
 import { ThemeProvider } from "@material-ui/core/styles";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import theme from "../src/theme";
+import Loading from "../components/Loading";
+import {motion} from "framer-motion";
+
 
 export default function MyApp(props) {
+  
   const { Component, pageProps } = props;
 
   React.useEffect(() => {
@@ -17,6 +21,7 @@ export default function MyApp(props) {
   }, []);
 
   return (
+    <motion.div initial="pageInitial" animate="pageAnimate" variants={{pageInitial: { opacity: 0}, pageAnimate: {opacity: 1}, }}>
     <React.Fragment>
       <Head>
         <title>My page</title>
@@ -31,7 +36,9 @@ export default function MyApp(props) {
         <Component {...pageProps} />
       </ThemeProvider>
     </React.Fragment>
+    </motion.div>
   );
+  
 }
 
 MyApp.propTypes = {
