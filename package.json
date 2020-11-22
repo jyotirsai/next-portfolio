@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.56",
     "@material-ui/styles": "^4.10.0",
     "framer-motion": "^2.7.5",
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-particles-webgl": "^1.0.10",
+    "react-responsive-animate-navbar": "^1.1.8",
     "react-terminal-ui": "^0.1.9",
     "react-typed": "^1.2.0"
   }
