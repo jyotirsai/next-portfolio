@@ -1,8 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import Intro from "../components/Intro";
 import Particles from "../components/Particles";
-import Loading from "../components/Loading";
+import About from "../components/About";
 import Footer from "../components/Footer";
 import ScrollLock from "react-scrolllock";
 
@@ -15,7 +14,7 @@ export default function Home() {
       <ScrollLock>
         <div className={styles.container}>
           <div className={styles.astronautImg}>
-            <Loading />
+            <About />
           </div>
           <Particles />
         </div>
