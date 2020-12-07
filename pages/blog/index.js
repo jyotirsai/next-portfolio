@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   post: {
     margin: "10px 0",
     padding: "10px 10px 0px 10px",
-    backgroundColor: "#00172d",
+    backgroundColor: "#001e3b",
     color: "#E0E0E0",
   },
   button: {
