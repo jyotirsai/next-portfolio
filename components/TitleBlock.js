@@ -1,6 +1,6 @@
 import React from "react";
-import { Typography, Link, Grid } from "@material-ui/core";
-import Date from "./date";
+import { Typography, Grid } from "@material-ui/core";
+import Date from "./Date";
 import { makeStyles } from "@material-ui/styles";
 
 const useStyles = makeStyles({
