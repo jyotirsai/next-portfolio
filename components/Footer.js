@@ -1,3 +1,3 @@
 export default function Footer() {
-  return <h1>Hello World</h1>;
+  return <footer style={{ bottom: "0px" }}>Hello World</footer>;
 }

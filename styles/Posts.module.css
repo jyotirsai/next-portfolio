@@ -1,0 +1,25 @@
+.container {
+  background-color: #00172d;
+  color: #d3d3d3;
+  height: 100%;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+}
+
+.article {
+  background-color: #00172d;
+  max-width: 900px;
+  width: 100%;
+  margin: 35px auto;
+  padding: 50px 25px;
+}
+
+.articleMain {
+  margin-top: 50px;
+  font-size: 18px;
+}

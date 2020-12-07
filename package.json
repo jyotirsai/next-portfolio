@@ -11,14 +11,24 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
-    "@material-ui/lab": "^4.0.0-alpha.56",
     "@material-ui/styles": "^4.10.0",
+    "@mdx-js/tag": "^0.20.3",
+    "@next/mdx": "^10.0.3",
+    "date-fns": "^2.16.1",
     "framer-motion": "^2.9.4",
+    "gray-matter": "^4.0.2",
     "next": "9.5.3",
+    "next-compose-plugins": "^2.2.1",
+    "next-mdx-remote": "^1.0.0",
+    "prism-react-renderer": "^1.1.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-particles-webgl": "^1.0.10",
     "react-responsive-animate-navbar": "^1.1.8",
-    "react-scrolllock": "^5.0.1"
+    "react-scrolllock": "^5.0.1",
+    "react-syntax-highlighter": "^15.3.1"
+  },
+  "devDependencies": {
+    "babel-plugin-prismjs": "^2.0.1"
   }
 }

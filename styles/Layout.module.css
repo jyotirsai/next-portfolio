@@ -1,0 +1,15 @@
+.background {
+  background-color: #00172d;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+}
+
+.container {
+  margin: 75px auto;
+  max-width: 900px;
+  width: 100%;
+}

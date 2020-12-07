@@ -1,0 +1,343 @@
+---
+title: "Making a To-do list app with React"
+date: "2020-09-09"
+author: "Jyotir Sai"
+excerpt: "This blog post will go over how to make a to-do list using React. We will be using the create-react-app CLI tool so let's go ahead and install that first. You will need to have..."
+---
+
+This blog post will go over how to make a to-do list using React. We will be using the create-react-app CLI tool so let's go ahead and install that first. You will need to have [node](https://nodejs.org/en/) installed first.
+
+Create a new folder called todo-list and navigate over to it in your command line/terminal. Type the following command to install a basic React app in your current directory.
+
+<CodeBlock lang="git">
+  {`
+npx create-react-app .
+`}
+</CodeBlock>
+
+npx is a tool that helps executing node packages and create-react-app provides the configurations and setup needed to create a single page React application.
+Adding a period at the end of the above command allows you to create a react app in the current directory, rather than specifying a brand new one.
+
+Type the below command in your terminal to start your server.
+
+<CodeBlock lang="git">{`npm start`}</CodeBlock>
+
+You should now see this in your browser on localhost:3000.
+
+![React intro page image](../../public/todolist/React-intro-page.PNG)
+
+Go over to your src folder and you'll see the files that are creating the above page. I want to start from scratch so I will delete all the files in this folder. Now create a new index.js and App.js file. Create React App uses Webpack and its configuration specifies that src/index.js is our entry point. The index.js file will be the first module that's being read. Open index.js and type the following:
+
+<CodeBlock lang="jsx">
+  {`
+// src/index.js
+import React from "react"
+import ReactDOM from "react-dom"
+`}
+</CodeBlock>
+
+When using React, we will be writing our code in JSX. JSX allows us to write HTML elements in JavaScript. ReactDOM is a package that provides DOM specific methods such as the render method. The render method is used to render react components onto our webpage for us to see. Let's use this method to render "Hello World" on our webpage.
+
+<CodeBlock lang="jsx">
+  {`
+// src/index.js
+import React from "react"
+import ReactDOM from "react-dom"
+// add the below line
+ReactDOM.render(<h1>Hello World</h1>, document.getElementById("root"));
+`}
+
+</CodeBlock>
+
+This produces:
+![Hello World](../../public/todolist/HelloWorld.PNG)
+
+The first argument in the render method is the JSX expression or React element that you want to render. The second argument is the container in which the element is to be rendered in. Go over to the public folder and open the index.html file. You should see a div element with the id "root".
+
+<CodeBlock lang="jsx">
+  {`
+// public/index.html
+<div id="root"></div>
+`}
+
+</CodeBlock>
+
+This is the container that our render method above is using to display our Hello World h1 tag.
+
+We can also render a React Element. Create a new file in your src folder and name it "App.js" and type the following:
+
+<CodeBlock lang="jsx">
+  {`
+// src/App.js
+import React from 'react'
+// App function
+const App = () => {
+return (
+    <div>
+    </div>
+)
+}
+export default App
+`}
+
+</CodeBlock>
+
+The above is the boiler plate for a functional react component. Create an h1 tag inside the div and type "From App Component".
+
+<CodeBlock lang="jsx">
+  {`
+// src/App.js
+import React from 'react'
+// App function
+const App = () => {
+return (
+    <div>
+      <h1>From App Component</h1>
+    </div>
+)
+}
+export default App
+`}
+
+</CodeBlock>
+
+In index.js, import the App function you just created. Remove the Hello World JSX expression and replace it with our App component.
+
+<CodeBlock lang="jsx">
+  {`
+// src/index.js
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+// Replace h1 tags with App component
+ReactDOM.render(<App />, document.getElementById("root"));
+`}
+
+</CodeBlock>
+
+The webpage will now render the App component:
+
+![FromAppComponent](../../public/todolist/FromAppComponent.PNG)
+
+Create a new folder within the src folder called components. Add two files within the folder, one named "AddItem.js" and the other "styles.js". In the AddItem.js file, add the basic functional boilerplate code. If you are using Visual Studio Code, there is an [extension](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets) that gives you useful shortcuts. After installing this extension, type "rafce" and enter to automatically generate the functional boilerplate code.
+
+<CodeBlock lang="jsx">
+  {`
+// src/components/AddItem.js
+import React from 'react'
+// functional component
+const AddItem = () => {
+return (
+  <div>
+    <h1></h1>
+  </div>
+)
+}
+export default AddItem
+`}
+
+</CodeBlock>
+
+In the App.js file, import the AddItem function from the components folder. Remove the h1 tag and replace it with the AddItem component.
+
+<CodeBlock lang="jsx">
+  {`
+// src/App.js
+import React from "react";
+import AddItem from "./components/AddItem";
+// Replace h1 tag with <AddItem /> component
+const App = () => {
+  return (
+    <div>
+      <AddItem />
+    </div>
+  );
+};
+export default App;
+`}
+
+</CodeBlock>
+
+To create the to-do list styling, we will be using [Material UI](https://material-ui.com/). Open your terminal and install the following:
+
+<CodeBlock lang="git">
+  {`
+npm install @material-ui/core @material-ui/styles @material-ui/icons
+`}
+
+</CodeBlock>
+
+Material UI is a React UI framework that has beautifully styled components you can use in your projects. Import the following components into AddItem.js
+
+<CodeBlock lang="jsx">
+  {`
+// src/components/AddItem.js
+import React from 'react'
+// Add the following
+import { Grid, Paper, TextField, Typography, Button } from "@material-ui/core"
+`}
+</CodeBlock>
+
+Inside the div, add the [Paper](https://material-ui.com/components/paper/) element. The paper element is where the to-do list will reside in and we can set the elevation prop to add a drop shadow effect.
+
+<CodeBlock lang="jsx">
+  {`
+// src/components/AddItem.js
+const AddItem = () => {
+  return (
+      <div>
+          <Paper elevation={3}>
+          </Paper>
+      </div>
+  )
+}
+`}
+</CodeBlock>
+
+You can read more about React props [here](https://www.w3schools.com/react/react_props.asp). In the context of Material UI, props allow us to customize elements. Let's add a title named "My To-Do List" using the Typography element. Inside the Paper element, add a Typography element with the following props:
+
+<CodeBlock lang="jsx">
+  {`
+// src/components/AddItem.js
+const AddItem = () => {
+    return (
+        <div>
+            <Paper elevation={3}>
+              {/* add below component */}
+                <Typography align="center" variant="h2">
+                    My To-Do List
+                </Typography>
+            </Paper>
+        </div>
+    )
+}
+`}
+</CodeBlock>
+
+The item prop specifies that the component will behave like a flex item. The xs sm md and lg props specify how the Grid changes with screen size and you can read more about them [here](https://material-ui.com/components/grid/). Within the first Grid item, we will add a TextField component which allows text input. In the second Grid item, add a Button component.
+
+<CodeBlock lang="jsx">
+  {`
+// src/components/AddItem.js
+const AddItem = () => {
+    return (
+        <div>
+            <Paper elevation={3}>
+                <Typography align="center" variant="h2">
+                    My To-Do List
+                </Typography>
+                {/* Insert the below code */}
+                <Grid container spacing={1}>
+                    <Grid item xs={9} sm={10} md={10} lg={11}>
+                        <TextField color="secondary" autocomplete="false"
+                         fullWidth id="task" label="Enter Task" variant="outlined"
+                        />
+                    </Grid>
+                    <Grid item xs={3} sm={2} md={2} lg={1}>
+                        <Button fullWidth variant="outlined" color="secondary" >
+                    </Grid>
+                </Grid>
+            </Paper>
+        </div>
+    )
+}
+`}
+</CodeBlock>
+
+Your To-Do list should now look like this:
+
+![todolistspacing](../../public/todolist/todolistspacing.PNG)
+
+We will fix the margins and padding later. Now we need to add the logic behind the list.
+
+When the user is typing in the text field we want to track what the user is typing. Once the user clicks on the Add button, we want to take whatever the user was typing and save it into an array and display it on a list below. To do this we will need an "onChange" event listener in our TextField component that will execute a function each time a user types in the field as well as an "onClick" event listener in our Button component that executes a function when it's clicked. Right below our "AddItem" arrow function and above our return statement, add two new arrow functions called "handleChange" and "submitTask".
+
+<CodeBlock lang="jsx">
+  {`
+// src/components/AddItem.js
+const AddItem = () => {
+    // this function will track what the user is typing
+    const handleChange = () => {
+        alert("You typed")
+    }
+    // this function will add the item to the to-do list
+    const submitTask = () => {
+        alert("You clicked the button")
+    }
+    return (...)
+}
+`}
+</CodeBlock>
+
+In the TextField component add an onChange event listener and set it equal to our handleChange function. In the Button component, add an onClick event listener and set it equal to our submitTask function. Now if you type or click on the button you will receive an alert as specified in our function.
+
+![buttonclick](../../public/todolist/buttonclick.PNG)
+
+To track the typed text and store that value into an array, we will be using something called the [useState](https://reactjs.org/docs/hooks-state.html) hook. The useState functionality basically allows you to manage the state of a component. Lets say you had a webpage with a number and a button and each time you pressed the button the number increased by one. This can be easily achieved with the useState hook as you can set the initial number to display on the webpage and then use the hook to easily increment the value by one. You'll first need to import the useState:
+
+<CodeBlock lang="jsx">
+  {`
+// src/components/AddItem.js
+import React, { useState } from "react";
+`}
+</CodeBlock>
+
+Above the handleChange function we created earlier, we need to declare the new state variables:
+
+<CodeBlock lang="jsx">
+  {`
+// src/components/AddItem.js
+const AddItem = () => {
+    // initialize useState hook
+    const [taskItem, setTaskItem] = useState("");
+    const [tasksArray, setTasksArray] = useState([])
+    const handleChange = () => {
+        alert("You typed")
+    }
+    const submitTask = () => {
+        alert("You clicked the button")
+    }
+    return (...)
+}
+`}
+</CodeBlock>
+
+We will be using the taskItem variable to keep track of what the user enters into the textfield. The empty quotation marks inside the useState hook indicates that our initial value is blank. We will use setTaskItem to change the value of taskItem. Inside our handleChange function, we will use setTaskItem to set the value of taskItem equal to whatever the user types into the textfield. To retrieve what the user types into the textfield, we need to pass the event to our handleChange function and pass the event value to setTaskItem.
+
+<CodeBlock lang="jsx">
+  {`
+// src/components/AddItem.js
+const handleChange = (event) => {
+    setTaskItem(event.target.value)
+  }
+`}
+</CodeBlock>
+
+In the TextField component, add a value prop and set it equal to the taskItem state variable. The taskItem state variable will be equal to whatever the user types in the TextField.
+
+The tasksArray will be used to push whatever the user enters into an array after they click the button. Since whatever the user types is equal to the taskItem state variable, we want to push the taskItem into the tasksArray when the user clicks the Add button. We initialized the tasksArray state variable with an empty array as seen above. We will use setTasksArray to add new tasks to the tasksArray. The most basic way to do this is adding setTasksArray(taskItem) inside our submitTask function. However, there's a problem with this because this code will only allow us to add one taskItem to the array. All the previous tasks that the user may have entered will be wiped clear from the tasksArray each time the user clicks the Add button. We can use JavaScript's spread operator to access previous states of the tasksArray. It can be implemented as shown below:
+
+<CodeBlock lang="jsx">
+  {`
+// src/components/AddItem.js
+const submitTask = () => {
+    setTasksArray((prevTasks) => {
+        return [...prevTasks, taskItem]
+    });
+};
+`}
+</CodeBlock>
+
+You can name the prevTasks iterator anything you want. Each time the user enters a task, we want to clear the textfield, which can easily be done by resetting taskItem to "".
+
+<CodeBlock lang="jsx">
+  {`
+// src/components/AddItem.js
+const submitTask = () => {
+    setTasksArray((prevTasks) => {
+        return [...prevTasks, taskItem]
+    });
+    setTaskItem("");
+};
+`}
+</CodeBlock>
