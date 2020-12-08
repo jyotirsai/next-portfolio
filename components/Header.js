@@ -12,7 +12,7 @@ import SideDrawer from "./SideDrawer";
 
 const useStyles = makeStyles({
   header: {
-    backgroundColor: "#181818",
+    backgroundColor: "rgba(40, 40, 40, 0.5)",
   },
   toolbar: {
     margin: "0 auto",

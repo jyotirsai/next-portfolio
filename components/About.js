@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     top: "47.5%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    backgroundColor: "rgba(46,49,49,0.8)",
+    backgroundColor: "rgba(8, 8, 8, 0.5)",
   },
   grid: {
     marginTop: 12.5,
