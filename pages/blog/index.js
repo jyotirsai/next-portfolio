@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   post: {
     margin: "10px 0",
     padding: "10px 10px 0px 10px",
-    backgroundColor: "#001e3b",
+    backgroundColor: "#282828",
     color: "#E0E0E0",
   },
   button: {
@@ -31,7 +31,7 @@ const useStyles = makeStyles({
   },
   posts: {
     width: "100%",
-    maxWidth: "1200px",
+    maxWidth: "900px",
     margin: "20px auto",
   },
   date: {
@@ -49,7 +49,7 @@ export default function BlogIndex({ allPostsData }) {
   return (
     <>
       <Head>
-        <title>Jyotir's blog</title>
+        <title>blog - jyotirsai.com</title>
       </Head>
       <div className={styles.container}>
         <Header blog={blog} projects={projects} />

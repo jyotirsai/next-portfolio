@@ -8,7 +8,7 @@ export default function Blog() {
   return (
     <div>
       <Head>
-        <title>Jyotir's projects</title>
+        <title>projects - jyotirsai.com</title>
       </Head>
       <div className={styles.container}>
         <Header blog={blog} projects={projects} />

@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
-import { Typography, Paper, Button, Grid } from "@material-ui/core";
+import { Typography, Paper, IconButton, Grid } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
+import { LinkedIn, GitHub, Email } from "@material-ui/icons";
 
 const useStyles = makeStyles({
   text: {
@@ -26,8 +27,10 @@ const useStyles = makeStyles({
     margin: "0px 5px",
   },
   button: {
-    color: "cyan",
-    border: "1px solid #888888",
+    color: "white",
+    "&:hover": {
+      color: "cyan",
+    },
   },
 });
 
@@ -43,17 +46,24 @@ export default function About() {
       </Typography>
       <Grid container justify="center" className={classes.grid}>
         <Grid item className={classes.buttonGrid}>
-          <Link href="/blog">
-            <Button variant="outlined" className={classes.button}>
-              Blog
-            </Button>
+          <Link href="https://www.linkedin.com/in/jyotirsai/">
+            <IconButton className={classes.button}>
+              <LinkedIn />
+            </IconButton>
           </Link>
         </Grid>
         <Grid item className={classes.buttonGrid}>
-          <Link href="/projects">
-            <Button variant="outlined" className={classes.button}>
-              Projects
-            </Button>
+          <Link href="https://github.com/jyotirsai">
+            <IconButton className={classes.button}>
+              <GitHub />
+            </IconButton>
+          </Link>
+        </Grid>
+        <Grid item className={classes.buttonGrid}>
+          <Link href="mailto:jyotirsai@gmail.com">
+            <IconButton className={classes.button}>
+              <Email />
+            </IconButton>
           </Link>
         </Grid>
       </Grid>
